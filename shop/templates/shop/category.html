@@ -1,0 +1,58 @@
+{%extends 'shop/base.html'%}
+{%load staticfiles%}
+{%block metadescription%}
+    {%if category%}
+        {{category.description|truncatewords:155}}
+    {%else%}
+        welcome to the cushuin store
+    {%endif%}
+{%endblock%}
+{%block title%}
+    {%if category%}
+        {{category.name}}- perfect coushion store
+    {%endif%}
+{%endblock%}
+
+{%block content%}
+{%if category%}
+    <div>
+        <div>
+            <p><a href="{% url 'shop:allProdCat'%}">Our product collection</a>|{{category.name}}</p>
+        </div>
+    </div>
+{%endif%}
+<div>
+    {%if category%}
+        <img src="{{category.image.url}}" alt="{{category.name}}">
+</div>
+<br/>
+<div>
+    <h1>{{category.name}}</h1>
+    <p>{{category.description}}</p>
+</div>
+{%else%}
+<div>
+    <img src="{% static 'banner.jpeg' %}" alt="our product collection">
+</div>
+<br/>
+<div>
+    <h1>Our production</h1>
+    <p>dfuh uhdu fuhuhd fuhf ufhuhfud fudhfudhf udhfudhfud fhudhf dfudhud fudhfud fudhf </p>
+</div>
+{%endif%}
+<div >
+    <div>
+        {% for product in products%}
+        <div>
+            <div>
+                <a href="{{product.get_url}}"><img src="{{product.image.url}}" alt="{{product.name}}"></a>
+            <div>
+                <h4>{{product.name}}</h4>
+                <p>{{product.price}}</p>
+            </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+{%endblock%}

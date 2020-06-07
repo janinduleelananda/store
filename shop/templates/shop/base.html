@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{%block metadescription%}{%endblock%}">
+   <link rel="stylesheet" href="{% static 'custom.css' %}">
+    <link rel="stylesheet" href="{%static 'bootstrap.min.css'%}">
+
+    <title>{%block title%}{%endblock%}</title>
+
+
+
+</head>
+<body>
+    <div class="container">
+        {%include 'shop/header.html'%}
+        {%include 'shop/navbar.html'%}
+        {%block content%}
+        {%endblock%}
+    </div>
+        {%include 'shop/footer.html'%}
+      <script src="{%static 'jquery-3.5.1.slim.min.js'%}" ></script>
+    <script src="{%static 'popper.min.js'%}"></script>
+    <script src="{%static 'bootstrap.min.js'%}"></script>
+
+</body>
+</html>

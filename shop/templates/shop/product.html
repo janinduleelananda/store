@@ -1,0 +1,30 @@
+{% extends 'shop/base.html' %}
+{%load staticfiles%}
+{%block metadescription%}
+{{procuct.description|truncatewords:155}}
+{%endblock%}
+{%block title%}
+{{product.name}}-perfect cushion store
+{%endblock%}
+{%block content%}
+<div>
+    <div>
+        <p><a href="{%url 'shop:allProdCat'%}">home</a></p>
+    </div>
+    <div>
+        <div>
+            <h1>{{product.name}}</h1>
+            <p>{{product.price}}</p>
+            <p>Product description</p>
+            <p>{{product.description}}</p>
+            {% if product.stock <= 0 %}
+            <p><b>out of stock<b/></p>
+            {%else%}
+            <a href="">Add to cart</a>
+            {%endif%}
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+
