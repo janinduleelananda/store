@@ -7,23 +7,33 @@
 {{product.name}}-perfect cushion store
 {%endblock%}
 {%block content%}
-<div>
-    <div>
-        <p><a href="{%url 'shop:allProdCat'%}">home</a></p>
+<div  class="row my_row_class">
+    <div class="mx-auto">
+        <p><a href="{%url 'shop:allProdCat'%}">home</a> | <a href="{{product.category.get_url}}">{{product.category}}</a></p>
     </div>
-    <div>
+<div class="container">
+    <br/>
+    <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+        <div style="min-width:18rem;">
+            <img src="{{product.image.url}}" alt="{{product.name}}">
+        </div>
+        <br/>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
         <div>
-            <h1>{{product.name}}</h1>
-            <p>{{product.price}}</p>
-            <p>Product description</p>
-            <p>{{product.description}}</p>
+            <h1 class="my_title"><b>{{product.name}}</b></h1>
+            <p >{{product.price}}</p>
+            <p class="my_title">Product description</p>
+            <p  class="text-justify my_prod_text">{{product.description}}</p>
             {% if product.stock <= 0 %}
-            <p><b>out of stock<b/></p>
+            <p class="text-justify my_prod_text"><b>out of stock<b/></p>
             {%else%}
-            <a href="">Add to cart</a>
+            <a class="btn btn-secondary" href="">Add to cart</a>
             {%endif%}
         </div>
     </div>
+</div>
 </div>
 {%endblock%}
 
