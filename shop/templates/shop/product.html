@@ -11,12 +11,13 @@
     <div class="mx-auto">
         <p><a href="{%url 'shop:allProdCat'%}">home</a> | <a href="{{product.category.get_url}}">{{product.category}}</a></p>
     </div>
+</div>
 <div class="container">
     <br/>
     <div class="row">
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
         <div style="min-width:18rem;">
-            <img src="{{product.image.url}}" alt="{{product.name}}">
+            <img style="max-width:400px;height:auto;" src="{{product.image.url}}" alt="{{product.name}}">
         </div>
         <br/>
     </div>
@@ -29,12 +30,13 @@
             {% if product.stock <= 0 %}
             <p class="text-justify my_prod_text"><b>out of stock<b/></p>
             {%else%}
-            <a class="btn btn-secondary" href="">Add to cart</a>
+            <a class="btn btn-secondary" href="{%url 'cart:add_cart' product.id%}">Add to cart</a>
             {%endif%}
         </div>
     </div>
 </div>
 </div>
+
 {%endblock%}
 
 

@@ -71,3 +71,27 @@
 .my_prod_text{
     padding-right:20px;
 }
+my_custom_table{
+    min-width:400px;
+    font-size:14px;
+}
+.my_custom_thead{
+    font-weight:normal;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    background-color:#f8f9fa!important;
+}
+.custom_a{
+    text_decoration:none;
+}
+.custom_icon{
+    text_dexoration:none;
+    color:#868e96!important;
+}
+.my_custom_button{
+    margin-top:5px;
+}
+.custom_image{
+    width:100px;
+    height:100px
+}
