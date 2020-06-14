@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'order.apps.OrderConfig',
     'cart.apps.CartConfig',
     'search_app.apps.SearchAppConfig',
     'shop.apps.ShopConfig',
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'stripe',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'store.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'shop','templates/'),os.path.join(BASE_DIR,'search_app','templates/'),os.path.join(BASE_DIR,'cart','templates/')],
+        'DIRS': [os.path.join(BASE_DIR,'shop','templates/'),os.path.join(BASE_DIR,'search_app','templates/'),os.path.join(BASE_DIR,'cart','templates/'),os.path.join(BASE_DIR,'admin','templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,3 +137,7 @@ STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 MEDIA_URL='/media/'
+
+STRIPE_PUBLISHABLE_KEY='pk_test_51GsXtBEaeOts3cccsJEP3ukIMQR8r8WEU9UWceWwkOBoC5WDRvDqGnHGdZBYceuFqzaBEUpPHWI6zwFiwTCBRDer00nzIhCG2p'
+STRIPE_SECRET_KEY= 'sk_test_51GsXtBEaeOts3cccGo2y0j5hcS6LZooOhqjN8LHmdOHtT1Az7Sej7QKUrGdTeUeimOXHySSuaaF6EG7ogy1yE0jU00fY4z7Uni'
+CRISPY_TEMPLATES_PACK='bootstrap4'

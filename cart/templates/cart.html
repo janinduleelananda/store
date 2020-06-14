@@ -91,6 +91,22 @@ cart
                 </tr>
                             </tbody>
         </table>
+<form action="" method="POST">
+    {%csrf_token%}
+    <script
+        src="http://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="{{data_key}}"
+        data-amount="{{stripe_total}}"
+        data-name="store"
+        data-description="{{description}}"
+        data-image="{%static 'image.jpg' alt='shop'%}"
+        data-locale="auto"
+        data-currency="gbp"
+        data-shipping-adderss="true"
+        data-billing-adddress="true"
+        data-zip-code="true">
+    </script>
+</form>
 
             <div class="mx-auto">
                 <a href="{%url 'shop:allProdCat'%}" class="btn btn-secondary btn-block my_sustom_button">Continue Shopping</a>
