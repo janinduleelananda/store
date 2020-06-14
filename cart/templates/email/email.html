@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Order {{transaction.id}} - store</title>
+        <style>
+            table{
+                width:60%;
+                margin:0 auto;
+                border-collapse:collapse;
+            }
+            table tr td {
+                border:1px solid #c1c1c1;
+            }
+            p {
+                padding-right:50px;
+                padding-left:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1>Thanks for shopping with us.</h1>
+            <p>This emal is to confirm that you have placed an order on the store<br>Please make sure that all the detail of your order are correct.</p>
+        </center>
+        <br/>
+        <table>
+            <tr>
+                <td align="top" colspan="2" style="width:50%;">
+                    <b>Bill to:</b><br/>
+                    billingname<br/>
+                    billingaddress<br/>
+                    billingcity<br/>
+                    billingpostcode<br/>
+                    billingcountry<br/>
+                </td>
+                <td align="top" colspan="2" style="width:50%;">
+                    <b>Order:</b> {{transaction.id}}<br/>
+                    <b>Date:</b> {{transaction.created|date:"d M Y"}}
+                </td>
+            </tr>
+            <tr>
+                <td align="top" colspan="2" style="width:50%;">
+                    <b>Ship to:</b><br/>
+                    shippingname<br/>
+                    shippingaddress<br/>
+                    shippingcity<br/>
+                    shippingpostcode<br/>
+                    shippingcountry<br/>
+                </td>
+                <td align="top" colspan="2" style="width:50%;">
+                    <b>Payment details:<b/><br/>
+                {{transaction.total}} was paid successfully.
+                <td/>
+            </tr>
+        </table>
+    <p>
+        <br/>
+    <center>
+        <p>If you are a registered customer and want to check your order history, please</p> <a href="http://127.0.0.1:8000/shop/account/login">sign in</a> Otherwise<a href="http://127.0.0.1:8000/shop/account/create">sign up</a> to create a account with us.</p>
+    </center>
+    </body>
+</html>

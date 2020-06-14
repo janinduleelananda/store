@@ -141,3 +141,11 @@ MEDIA_URL='/media/'
 STRIPE_PUBLISHABLE_KEY='pk_test_51GsXtBEaeOts3cccsJEP3ukIMQR8r8WEU9UWceWwkOBoC5WDRvDqGnHGdZBYceuFqzaBEUpPHWI6zwFiwTCBRDer00nzIhCG2p'
 STRIPE_SECRET_KEY= 'sk_test_51GsXtBEaeOts3cccGo2y0j5hcS6LZooOhqjN8LHmdOHtT1Az7Sej7QKUrGdTeUeimOXHySSuaaF6EG7ogy1yE0jU00fY4z7Uni'
 CRISPY_TEMPLATES_PACK='bootstrap4'
+LOGIN_REDIRECT_URL='shop:allProdCat'
+
+#emailmessage settings
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT= '587'
+EMAIL_USE_TLS= True
+EMAIL_HOST_USER='janindur@gmail.com'
+EMAIL_HOST_PASSWORD='kitty janindu'
