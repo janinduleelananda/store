@@ -49,6 +49,7 @@ def signupView(request):
             customer_group=Group.objects.get(name='Customer')
             customer_group.user_set.add(signup_user)
             login(request, signup_user)
+            return redirect('shop:allProdCat')
 
     else:
         form=SignUpForm()
